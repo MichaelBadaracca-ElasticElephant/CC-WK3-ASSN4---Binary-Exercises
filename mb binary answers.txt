@@ -1,0 +1,98 @@
+Binary Exercises
+
+1. Without using a calculator:
+
+64 in base 10 -> base 2 (example)
+	100 base 10 = 1000000 base 2
+
+100 in base 10 -> base 2
+	1100100
+
+100 in base 10 -> base 5
+	400
+
+1111111 in base 2 -> base 10
+	127
+
+2. Describe the algorithm for adding two binary numbers
+
+Example:
+    1001    9
+   +0011   +3
+   -----   --
+   01100   12
+
+	You can add binary numbers in a similar way you can long add decimal numbers. If we have A + B we start with the lowest place in number B and add it to the lowest place in number A. If this exceeds the highest number of the base (in decimal >9 in binary >1) we carry that value over to the next place and then add those places in A and B plus any carry over. Repeat this process until all places have been added.
+   
+3. Describe the algorithm for multiplying two binary numbers
+
+Example:
+    1001    9
+   x0011   x3
+   -----   --
+   11011   27
+
+   You can multiply binary numbers in a similar way you can multiply decimal numbers. If we have A*B we start by multiplying the lowest place in number A by the each place in number B (starting from the right). If the product of any place in number A exceeds the base (in decimal >9 in binary >1) then carry over to the next place (to the left) and add after the multiplication with that place. Once the first place in number A has been multiplied with all the places in number B, move on to multiplying the next place in number A by each place of number B, however add a place to the right of the new product for each advancing place from number A. Once all the places in number A have multiplied all the places of number B as described below, add up all of the products to get the final product.
+
+4. Is there a trick for multiplying numbers by 2? Dividing numbers by 2?
+    A quick trick to multiply binary by two is to add a zero at the right end of the number (similar to multiply a decimal number by 10).
+
+    A quick trick for dividing numbers by two is to take away the right most bit of the binary number (similar to dividing integers by 10).
+
+    This is also called bit shifting since it shifts the digits to the right or the left.
+
+5. Write the truth tables for AND, OR, and NOT
+
+(example) AND:
+    ^ | a b
+    -------
+    1 | 1 1
+    0 | 1 0
+    0 | 0 1
+    0 | 0 0
+
+        OR
+    a||b | a b
+    ----------
+     0   | 0 0
+     1   | 0 1
+     1   | 1 0
+     1   | 1 1 
+
+      NOT
+    !a | a 
+    --------
+     1 | 0
+     0 | 1
+
+EXTRA CREDIT 1: Using just the operators described above, build a "half adder".
+A "half adder" takes in two inputs, A and B, and produces as output
+the "sum" of A and B, and a "carry" if one exists.
+
+
+
+Here is the truth table for the "half adder". + is the sum, and "C"
+is the carry.
+    + C | A B
+    ---------
+    0 0 | 0 0
+    1 0 | 0 1
+    1 0 | 1 0
+    1 1 | 1 1
+
+EXTRA CREDIT 2: Using just the operators described above, build a "full adder".
+A "full adder" takes in three inputs: A, B, and Cin (the carry in), and produces two
+outputs: the sum (S) and a carry out (Cout)
+
+Here is the truth table for the "full adder".
+
+A  B  Cin  | Cout S
+------------------
+0  0  0    |  0  0
+0  0  1    |  0  1
+0  1  0    |  0  1
+0  1  1    |  1  0
+1  0  0    |  0  1
+1  0  1    |  1  0
+1  1  0    |  1  0
+1  1  1    |  1  1
